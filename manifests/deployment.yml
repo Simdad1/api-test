@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: myimage001 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myimage001
+  template:
+    metadata:
+      labels:
+        app: myimage001 
+    spec:
+      containers:
+        - name: myimage001 
+          image: myregistry1221.azurecr.io/myimage001
+          ports:
+          - containerPort: 5001
